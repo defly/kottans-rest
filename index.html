@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Shower Presentation Engine</title>
+	<title>REST for Kottans</title>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,13 +9,14 @@
 </head>
 <body class="shower list">
 	<header class="caption">
-		<h1>Shower Presentation Engine</h1>
-		<p>Yours Truly, Famous Inc.</p>
+		<h1>REST for Kottans</h1>
+		<p>from Artem Bei</p>
 	</header>
 	<section class="slide" id="cover">
-		<h2>Shower Presentation Engine</h2>
-		<p>Brought to you by <a href="http://pepelsbey.net">Vadim Makeev</a></p>
-		<img src="pictures/cover.jpg" alt="" class="cover">
+		<h2>REST for Kottans</h2>
+		<p>from <a href="https://ua.linkedin.com/in/artembey
+">Artem Bei</a></p>
+		<img src="pictures/nose-up.jpg" alt="" class="cover">
 		<!--
 			To apply styles to the certain slides
 			set slide ID to get needed elements
@@ -37,8 +38,119 @@
 				#cover p a {
 					color:#FFF;
 					}
+				.small-code code {
+					font-size: 0.65em;
+				}
+				.xs-code code {
+					font-size: 0.4em;
+				}
+
 		</style>
 	</section>
+	<section class="slide">
+		<h2>API</h2>
+		<p>is application programming interface</p>
+	</section>
+
+	<section class="slide">
+		<h2>Web API</h2>
+		<p>Interface to web application</p>
+		<ul>
+			<li>REST</li>
+			<li>SOAP</li>
+			<li>XML-RPC</li>
+			<li>etc ...</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Remote Procedure Call</h2>
+		<pre class="small-code">
+			<code>&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;</code>
+			<code> &lt;soap:Body&gt;</code>
+			<code>  &lt;getProductDetails xmlns=&quot;http://warehouse.example.com/ws&quot;&gt;</code>
+			<code>    &lt;productID&gt;12345&lt;/productID&gt;</code>
+			<code>  &lt;/getProductDetails&gt;</code>
+			<code> &lt;/soap:Body&gt;</code>
+			<code>&lt;/soap:Envelope&gt;</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>HTTP API</h2>
+		<p>
+			Extensive use HTTP protocol features for API implementation
+		</p>
+	</section>
+
+	<section class="slide">
+		<h2>RESTful API</h2>
+		<p>
+			API in REST systems
+		</p>
+	</section>
+
+	<section class="slide">
+		<figure>
+		<blockquote>
+			<p>
+				Representational State Transfer (REST) architectural style for distributed hypermedia systems
+			</p>
+		</blockquote>
+			<figcaption style="font-size: 0.75em;">Roy Fielding, <a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm">Architectural Styles and the Design of Network-based Software Architectures</a></figcaption>
+
+		</figure>
+	</section>
+
+	<section class="slide">
+		<h2>REST constraints</h2>
+		<ol>
+			<li>Client-Server</li>
+			<li>Stateless</li>
+			<li>Cache</li>
+			<li>Uniform Interface</li>
+			<li>Layered System</li>
+			<li>Code-On-Demand</li>
+		</ol>
+	</section>
+
+	<section class="slide">
+		<h2>HTTP is the protocol for REST systems</h2>
+		<p>So lets dive deep in HTTP</p>
+	</section>
+
+	<section class="slide">
+		<h2>Request-Response</h2>
+		<p>
+			<img src="pictures/http-rr.png" width="500" />
+		</p>
+	</section>
+
+	<section class="slide">
+		<h2>HTTP Headers</h2>
+		<p><i>curl https://api.github.com --verbose</i></p>
+		<p>
+			<pre class="small-code">
+				<code>> GET / HTTP/1.1</code>
+				<code>> Host: api.github.com</code>
+				<code>> User-Agent: curl/7.43.0</code>
+				<code>> Accept: */*</code>
+				<code>...</code>
+			</pre>
+			<pre class="small-code">
+				<code>< HTTP/1.1 200 OK</code>
+				<code>< Server: GitHub.com</code>
+				<code>< Content-Type: application/json; charset=utf-8</code>
+				<code>< Content-Length: 2064</code>
+				<code>...</code>
+			</pre>
+		</p>
+	</section>
+
+
+
+
+
 	<section class="slide">
 		<h2>Shower key features</h2>
 		<ol>
