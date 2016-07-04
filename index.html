@@ -45,6 +45,11 @@
 					font-size: 0.4em;
 				}
 
+				.low-text {
+					font-size: 0.75em;
+					color: #777;
+				}
+
 		</style>
 	</section>
 	<section class="slide">
@@ -145,6 +150,219 @@
 				<code>...</code>
 			</pre>
 		</p>
+	</section>
+
+	<section class="slide">
+		<h2>URI</h2>
+		<p>Unique Resource Identifier</p>
+	</section>
+
+	<section class="slide">
+		<h2>Methods</h2>
+		<ul>
+			<li>GET</li>
+			<li>POST</li>
+			<li>PUT</li>
+			<li>DELETE</li>
+			<li>OPTIONS</li>
+			<li>PATCH</li>
+			<li>...</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Methods</h2>
+		<ul>
+			<li><strong>GET</strong></li>
+			<li><strong>POST</strong></li>
+			<li><strong>PUT</strong></li>
+			<li><strong>DELETE</strong></li>
+			<li>OPTIONS</li>
+			<li>PATCH</li>
+			<li>...</li>
+		</ul>
+	</section>
+
+
+	<section class="slide">
+		<h2>Statuses</h2>
+		<img src="pictures/http-codes.png" width="400">
+	</section>
+
+	<section class="slide">
+		<h2>Headers</h2>
+		<ul>
+			<li>Host</li>
+			<li>Accept</li>
+			<li>Content-type</li>
+			<li>Authorization</li>
+			<li>Cookie</li>
+			<li>Allow</li>
+			<li>...</li>
+			<li>X- headers</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Back to the REST</h2>
+		<img src="pictures/richardson-overview.png" width="500">
+		<p>
+			<i class="low-text">* next pictures stolen from Martin Fowler blog</i>
+		</p>
+	</section>
+
+	<section class="slide">
+		<h2>REST level 0</h2>
+		<p>Like remote procedure call</p>
+		<img src="pictures/r-0.png" width="500">
+	</section>
+
+	<section class="slide">
+		<h2>REST level 1</h2>
+		<p>Introduce Resources accessible via URI</p>
+		<img src="pictures/r-1.png" width="500">
+	</section>
+
+	<section class="slide">
+		<h2>REST level 2</h2>
+		<p>Add more HTTP stuff</p>
+		<img src="pictures/r-2.png" width="500">
+	</section>
+
+	<section class="slide">
+		<h2>Represent our actions in HTTP terms</h2>
+		<img src="pictures/methods-codes.png" width="600">
+	</section>
+
+	<section class="slide">
+		<h2>REST level 3</h2>
+		<p>Add links and make data live</p>
+		<img src="pictures/r-3.png" width="500">
+	</section>
+
+	<section class="slide">
+		<p>API like controls for state-machine</p>
+		<img src="pictures/e-1.png" height="400">
+	</section>
+
+	<section class="slide">
+		<p>API like controls for state-machine</p>
+		<img src="pictures/e-2.png" height="400">
+	</section>
+
+	<section class="slide">
+		<p>API like controls for state-machine</p>
+		<img src="pictures/e-3.png" height="400">
+	</section>
+
+	<section class="slide">
+		<p>API like controls for state-machine</p>
+		<img src="pictures/e-4.png" height="200">
+	</section>
+
+	<section class="slide">
+		<p>API like controls for state-machine</p>
+		<img src="pictures/e-5.png" height="300">
+	</section>
+
+	<section class="slide">
+		<p>API like controls for state-machine</p>
+		<img src="pictures/e-6.png" height="300">
+	</section>
+
+	<section class="slide">
+		<h2>Hypermedia or HATEOAS</h2>
+		<ul>
+			<li>HAL</li>
+			<li>Siren</li>
+			<li>JSON API</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Node.js ecosystem for API development</h2>
+		<ul>
+			<li>Express</li>
+			<li>Koa</li>
+			<li>HAPI</li>
+			<li>restify</li>
+			<li>Loopback</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Express</h2>
+		<p>Fast, unopinionated, minimalist web framework for Node.js</p>
+		<ul>
+			<li>26k stars on Github</li>
+			<li>6,456,205 downloads in the last month on NPM</li>
+			<li>major version is 4</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Express</h2>
+		<ul>
+			<li>Routing</li>
+			<li>Middlewares</li>
+			<li>Error handling</li>
+			<li>Security</li>
+			<li>Useful packages</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Express</h2>
+		<p>Node.js style Hello World</p>
+		<img src="pictures/express-hello-world.png" width="500">
+	</section>
+
+	<section class="slide">
+		<h2>Express Routing</h2>
+		<p>Route path</p>
+			<code>
+app.get(<mark>'/users/:userId'</mark>, function(req, res) {});
+			</code>
+	</section>
+
+	<section class="slide">
+		<h2>Express Routing</h2>
+		<p>Routes modularity</p>
+		<pre class="small-code">
+<code>//users.js</code>
+<code>let userRouter = express.Router();</code>
+		</pre>
+		<pre class="small-code">
+<code>//items.js</code>
+<code>let itemRouter = express.Router();</code>
+</pre>
+
+		<pre class="small-code">
+<code>//app.js</code>
+<code>import userRouter from './users';</code>
+<code>import itemRouter from './items';</code>
+<code><mark>app.use('/users', userRouter);</mark></code>
+<code><mark>app.use('/items', itemRouter);</mark></code>
+</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Middleware functions</h2>
+		<p>Middleware functions are functions that have access to the request object (req), the response object (res), and the next middleware function in the application’s request-response cycle.</p>
+<pre class="small-code">
+<code>function printMethod(req, res, next) {</code>
+<code>	console.log('Method is', req.method);</code>
+<code>	next();</code>
+<code>}</code>
+</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Middleware functions</h2>
+<pre>
+<code>router.use('/', validateToken, checkPermissions);</code>
+<code>router.post('/users', [validateInput, handleUserCreate]);</code>
+</pre>
 	</section>
 
 
