@@ -365,9 +365,81 @@ app.get(<mark>'/users/:userId'</mark>, function(req, res) {});
 </pre>
 	</section>
 
+	<section class="slide">
+		<h2>Error handling</h2>
+<pre>
+<code>if(err) return next(err);</code>
+</pre>
+
+<pre>
+<code>app.use(function(<mark>err</mark>, req, res, next) {</code>
+<code>  console.error(err.stack);</code>
+<code>  res.status(500).send('Something broke!');</code>
+<code>});</code>
+</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Protect your API</h2>
+		<ul>
+			<li>Use HTTPS (it`s free now)</li>
+			<li>Authentication & Authorization</li>
+			<li>CORS</li>
+			<li>Rate limit requests</li>
+			<li>IP whitelists</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Passport middleware</h2>
+		<p><a href="http://passportjs.org/">http://passportjs.org/</a></p> middleware with more than 300 authentication strategies
+		<ul>
+			<li>Sessions</li>
+			<li>JSON Web Tokens</li>
+			<li>OAuth</li>
+			<li>...</li>
+		</ul>
+	</section>
 
 
 
+	<section class="slide">
+		<h2>Project Structure</h2>
+	</section>
+
+	<section class="slide">
+		<h2>Project Structure: package.json</h2>
+<pre class="small-code">
+	<code>
+"scripts": {
+  "start": "pm2 delete api; <mark>pm2</mark> start run.js --name api
+  --log-date-format='YYYY-MM-DD HH:mm Z';",
+  "dev": "<mark>NODE_ENV=development</mark> nodemon run.js"
+  <mark>"test": "NODE_ENV=test mocha"</mark>
+}
+	</code>
+</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Project Structure: code</h2>
+<pre class="small-code">
+	<code>
+doc/
+config/
+migrations/
+routes/
+locales/
+services/ | models/
+test/
+  unit/
+  api/
+app.js
+run.js
+package.json
+	</code>
+</pre>
+	</section>
 
 	<section class="slide">
 		<h2>Shower key features</h2>
