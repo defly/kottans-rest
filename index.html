@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Shower Presentation Engine</title>
+	<title>REST for Kottans</title>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,13 +9,14 @@
 </head>
 <body class="shower list">
 	<header class="caption">
-		<h1>Shower Presentation Engine</h1>
-		<p>Yours Truly, Famous Inc.</p>
+		<h1>REST for Kottans</h1>
+		<p>from Artem Bei</p>
 	</header>
 	<section class="slide" id="cover">
-		<h2>Shower Presentation Engine</h2>
-		<p>Brought to you by <a href="http://pepelsbey.net">Vadim Makeev</a></p>
-		<img src="pictures/cover.jpg" alt="" class="cover">
+		<h2>REST for Kottans</h2>
+		<p>from <a href="https://ua.linkedin.com/in/artembey
+">Artem Bei</a></p>
+		<img src="pictures/nose-up.jpg" alt="" class="cover">
 		<!--
 			To apply styles to the certain slides
 			set slide ID to get needed elements
@@ -37,143 +38,515 @@
 				#cover p a {
 					color:#FFF;
 					}
+				.small-code code {
+					font-size: 0.65em;
+				}
+				.xs-code code {
+					font-size: 0.4em;
+				}
+
+				.low-text {
+					font-size: 0.75em;
+					color: #777;
+				}
+
 		</style>
 	</section>
 	<section class="slide">
-		<h2>Shower key features</h2>
-		<ol>
-			<li>Built on HTML, CSS and vanilla JavaScript</li>
-			<li>Works in all modern browsers</li>
-			<li>Themes are separated from engine</li>
-			<li>Modular and extensible</li>
-			<li>Fully keyboard accessible</li>
-			<li>Printable to PDF</li>
-		</ol>
-		<p class="note">Shower ['ʃəuə] noun. A person or thing that shows.</p>
+		<h2>API</h2>
+		<p>is application programming interface</p>
 	</section>
+
 	<section class="slide">
-		<h2>Plain text on your slides</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco laboris <strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in reprehenderit in voluptate velit esse cillum <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in <code>&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.</p>
+		<h2>Web API</h2>
+		<p>Interface to web application</p>
+		<ul>
+			<li>REST</li>
+			<li>SOAP</li>
+			<li>XML-RPC</li>
+			<li>etc ...</li>
+		</ul>
 	</section>
+
 	<section class="slide">
-		<h2>Two columns if you like</h2>
-		<p class="double">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-	</section>
-	<section class="slide">
-		<h2>All kind of lists</h2>
-		<ol>
-			<li>Simple lists are marked with bullets</li>
-			<li>Ordered lists begin with a number</li>
-			<li>You can even nest lists one inside another
-				<ul>
-					<li>Or mix their types</li>
-					<li>But do not go too far</li>
-					<li>Otherwise audience will be bored</li>
-				</ul>
-			</li>
-			<li>Look, seven rows exactly!</li>
-		</ol>
-	</section>
-	<section class="slide">
-		<h2>Serious citations</h2>
-		<figure>
-			<blockquote>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-			</blockquote>
-			<figcaption>Marcus Tullius Cicero</figcaption>
-		</figure>
-	</section>
-	<section class="slide">
-		<h2>Code samples</h2>
-		<pre>
-			<code>&lt;!DOCTYPE html&gt;</code>
-			<code class="mark">&lt;html lang="en"&gt;</code>
-			<code><mark>&lt;head&gt;</mark> <span class="comment">&lt;!--Comment--&gt;</span></code>
-			<code>    &lt;title&gt;Shower&lt;/title&gt;</code>
-			<code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
-			<code>    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
-			<code><mark>&lt;/head&gt;</mark></code>
+		<h2>Remote Procedure Call</h2>
+		<pre class="small-code">
+			<code>&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;</code>
+			<code> &lt;soap:Body&gt;</code>
+			<code>  &lt;getProductDetails xmlns=&quot;http://warehouse.example.com/ws&quot;&gt;</code>
+			<code>    &lt;productID&gt;12345&lt;/productID&gt;</code>
+			<code>  &lt;/getProductDetails&gt;</code>
+			<code> &lt;/soap:Body&gt;</code>
+			<code>&lt;/soap:Envelope&gt;</code>
 		</pre>
 	</section>
+
 	<section class="slide">
-		<h2>Even tables</h2>
-		<table>
-		<tr>
-			<th scope="col">Locavore</th>
-			<th>Umami</th>
-			<th>Helvetica</th>
-			<th>Vegan</th>
-		</tr>
-		<tr>
-			<th scope="row">Fingerstache</th>
-			<td>Kale</td>
-			<td>Chips</td>
-			<td>Keytar</td>
-		</tr>
-		<tr>
-			<th scope="row">Sriracha</th>
-			<td>Gluten-free</td>
-			<td>Ennui</td>
-			<td>Keffiyeh</td>
-		</tr>
-		<tr>
-			<th scope="row">Thundercats</th>
-			<td>Jean</td>
-			<td>Shorts</td>
-			<td>Biodiesel</td>
-		</tr>
-		<tr>
-			<th scope="row">Terry</th>
-			<td>Richardson</td>
-			<td>Swag</td>
-			<td>Blog</td>
-		</tr>
-		</table>
-		<p>It’s good to have information organized.</p>
+		<h2>HTTP API</h2>
+		<p>
+			Extensive use HTTP protocol features for API implementation
+		</p>
 	</section>
-	<section class="slide" id="picture">
-		<h2>Pictures</h2>
-		<img src="pictures/picture.jpg" alt="" class="cover">
-		<style>
-			#picture h2 {
-				color:#FFF;
-				}
-		</style>
-	</section>
+
 	<section class="slide">
-		<h2 class="shout shrink">You can even shout this way</h2>
+		<h2>RESTful API</h2>
+		<p>
+			API in REST systems
+		</p>
 	</section>
+
 	<section class="slide">
-		<h2>Inner navigation</h2>
+		<figure>
+		<blockquote>
+			<p>
+				Representational State Transfer (REST) architectural style for distributed hypermedia systems
+			</p>
+		</blockquote>
+			<figcaption style="font-size: 0.75em;">Roy Fielding, <a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm">Architectural Styles and the Design of Network-based Software Architectures</a></figcaption>
+
+		</figure>
+	</section>
+
+	<section class="slide">
+		<h2>REST constraints</h2>
 		<ol>
-			<li>Lets you reveal list items one by one</li>
-			<li class="next">To keep some key points</li>
-			<li class="next">In secret from audience</li>
-			<li class="next">But it will work only once</li>
-			<li class="next">Nobody wants to see the same joke twice</li>
+			<li>Client-Server</li>
+			<li>Stateless</li>
+			<li>Cache</li>
+			<li>Uniform Interface</li>
+			<li>Layered System</li>
+			<li>Code-On-Demand</li>
 		</ol>
 	</section>
-	<section class="slide grid">
-		<h2>All nicely aligned to grid</h2>
+
+	<section class="slide">
+		<h2>HTTP is the protocol for REST systems</h2>
+		<p>So lets dive deep in HTTP</p>
 	</section>
-	<section class="slide" id="see-more">
-		<h2 class="shout">
-			<img src="pictures/logo.svg" alt="Shower logo">
-			<a href="https://github.com/shower/shower">See more on GitHub</a>
-		</h2>
-		<style>
-			#see-more h2 {
-				font-size:100px
-				}
-			#see-more img {
-				width:0.72em;
-				height:0.72em;
-				}
-		</style>
+
+	<section class="slide">
+		<h2>Request-Response</h2>
+		<p>
+			<img src="pictures/http-rr.png" width="500" />
+		</p>
 	</section>
-	<p class="badge">
-		<a href="https://github.com/shower/shower">Fork me on GitHub</a>
-	</p>
+
+	<section class="slide">
+		<h2>HTTP Headers</h2>
+		<p><i>curl https://api.github.com --verbose</i></p>
+		<p>
+			<pre class="small-code">
+				<code>> GET / HTTP/1.1</code>
+				<code>> Host: api.github.com</code>
+				<code>> User-Agent: curl/7.43.0</code>
+				<code>> Accept: */*</code>
+				<code>...</code>
+			</pre>
+			<pre class="small-code">
+				<code>< HTTP/1.1 200 OK</code>
+				<code>< Server: GitHub.com</code>
+				<code>< Content-Type: application/json; charset=utf-8</code>
+				<code>< Content-Length: 2064</code>
+				<code>...</code>
+			</pre>
+		</p>
+	</section>
+
+	<section class="slide">
+		<h2>URI</h2>
+		<p>Unique Resource Identifier</p>
+	</section>
+
+	<section class="slide">
+		<h2>Methods</h2>
+		<ul>
+			<li>GET</li>
+			<li>POST</li>
+			<li>PUT</li>
+			<li>DELETE</li>
+			<li>OPTIONS</li>
+			<li>PATCH</li>
+			<li>...</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Methods</h2>
+		<ul>
+			<li><strong>GET</strong></li>
+			<li><strong>POST</strong></li>
+			<li><strong>PUT</strong></li>
+			<li><strong>DELETE</strong></li>
+			<li>OPTIONS</li>
+			<li>PATCH</li>
+			<li>...</li>
+		</ul>
+	</section>
+
+
+	<section class="slide">
+		<h2>Statuses</h2>
+		<img src="pictures/http-codes.png" width="400">
+	</section>
+
+	<section class="slide">
+		<h2>Headers</h2>
+		<ul>
+			<li>Host</li>
+			<li>Accept</li>
+			<li>Content-type</li>
+			<li>Authorization</li>
+			<li>Cookie</li>
+			<li>Allow</li>
+			<li>...</li>
+			<li>X- headers</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Back to the REST</h2>
+		<img src="pictures/richardson-overview.png" width="500">
+		<p>
+			<i class="low-text">* next pictures stolen from Martin Fowler blog</i>
+		</p>
+	</section>
+
+	<section class="slide">
+		<h2>REST level 0</h2>
+		<p>Like remote procedure call</p>
+		<img src="pictures/r-0.png" width="500">
+	</section>
+
+	<section class="slide">
+		<h2>REST level 1</h2>
+		<p>Introduce Resources accessible via URI</p>
+		<img src="pictures/r-1.png" width="500">
+	</section>
+
+	<section class="slide">
+		<h2>REST level 2</h2>
+		<p>Add more HTTP stuff</p>
+		<img src="pictures/r-2.png" width="500">
+	</section>
+
+	<section class="slide">
+		<h2>Represent our actions in HTTP terms</h2>
+		<img src="pictures/methods-codes.png" width="600">
+	</section>
+
+	<section class="slide">
+		<h2>REST level 3</h2>
+		<p>Add links and make data live</p>
+		<img src="pictures/r-3.png" width="500">
+	</section>
+
+	<section class="slide">
+		<p>API like controls for state-machine</p>
+		<img src="pictures/e-1.png" height="400">
+	</section>
+
+	<section class="slide">
+		<p>API like controls for state-machine</p>
+		<img src="pictures/e-2.png" height="400">
+	</section>
+
+	<section class="slide">
+		<p>API like controls for state-machine</p>
+		<img src="pictures/e-3.png" height="400">
+	</section>
+
+	<section class="slide">
+		<p>API like controls for state-machine</p>
+		<img src="pictures/e-4.png" height="200">
+	</section>
+
+	<section class="slide">
+		<p>API like controls for state-machine</p>
+		<img src="pictures/e-5.png" height="300">
+	</section>
+
+	<section class="slide">
+		<p>API like controls for state-machine</p>
+		<img src="pictures/e-6.png" height="300">
+	</section>
+
+	<section class="slide">
+		<h2>Hypermedia or HATEOAS</h2>
+		<ul>
+			<li>HAL</li>
+			<li>Siren</li>
+			<li>JSON API</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Node.js ecosystem for API development</h2>
+		<ul>
+			<li>Express</li>
+			<li>Koa</li>
+			<li>HAPI</li>
+			<li>restify</li>
+			<li>Loopback</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Express</h2>
+		<p>Fast, unopinionated, minimalist web framework for Node.js</p>
+		<ul>
+			<li>26k stars on Github</li>
+			<li>6,456,205 downloads in the last month on NPM</li>
+			<li>major version is 4</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Express</h2>
+		<ul>
+			<li>Routing</li>
+			<li>Middlewares</li>
+			<li>Error handling</li>
+			<li>Security</li>
+			<li>Useful packages</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Express</h2>
+		<p>Node.js style Hello World</p>
+		<img src="pictures/express-hello-world.png" width="500">
+	</section>
+
+	<section class="slide">
+		<h2>Express Routing</h2>
+		<p>Route path</p>
+			<code>
+app.get(<mark>'/users/:userId'</mark>, function(req, res) {});
+			</code>
+	</section>
+
+	<section class="slide">
+		<h2>Express Routing</h2>
+		<p>Routes modularity</p>
+		<pre class="small-code">
+<code>//users.js</code>
+<code>let userRouter = express.Router();</code>
+		</pre>
+		<pre class="small-code">
+<code>//items.js</code>
+<code>let itemRouter = express.Router();</code>
+</pre>
+
+		<pre class="small-code">
+<code>//app.js</code>
+<code>import userRouter from './users';</code>
+<code>import itemRouter from './items';</code>
+<code><mark>app.use('/users', userRouter);</mark></code>
+<code><mark>app.use('/items', itemRouter);</mark></code>
+</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Middleware functions</h2>
+		<p>Middleware functions are functions that have access to the request object (req), the response object (res), and the next middleware function in the application’s request-response cycle.</p>
+<pre class="small-code">
+<code>function printMethod(req, res, next) {</code>
+<code>	console.log('Method is', req.method);</code>
+<code>	next();</code>
+<code>}</code>
+</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Middleware functions</h2>
+<pre>
+<code>router.use('/', <mark>validateToken, checkPermissions</mark>);</code>
+<code>router.post('/users', <mark>[validateInput, handleUserCreate]</mark>);</code>
+</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Error handling</h2>
+<pre>
+<code>if(err) return next(err);</code>
+</pre>
+
+<pre>
+<code>app.use(function(<mark>err</mark>, req, res, next) {</code>
+<code>  console.error(err.stack);</code>
+<code>  res.status(500).send('Something broke!');</code>
+<code>});</code>
+</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Protect your API</h2>
+		<ul>
+			<li>Use HTTPS (it`s free now)</li>
+			<li>Authentication & Authorization</li>
+			<li>CORS</li>
+			<li>Rate limit requests</li>
+			<li>IP whitelists</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Passport middleware</h2>
+		<p><a href="http://passportjs.org/">http://passportjs.org/</a></p> middleware with more than 300 authentication strategies
+		<ul>
+			<li>Sessions</li>
+			<li>JSON Web Tokens</li>
+			<li>OAuth</li>
+			<li>...</li>
+		</ul>
+	</section>
+
+
+
+	<section class="slide">
+		<h2>Project Structure</h2>
+	</section>
+
+	<section class="slide">
+		<h2>Project Structure: package.json</h2>
+<pre class="small-code">
+	<code>
+"scripts": {
+  "start": "pm2 delete api; <mark>pm2</mark> start run.js --name api
+  --log-date-format='YYYY-MM-DD HH:mm Z';",
+  "dev": "<mark>NODE_ENV=development</mark> nodemon run.js"
+  <mark>"test": "NODE_ENV=test mocha"</mark>
+}
+	</code>
+</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Project Structure: code</h2>
+<pre class="small-code">
+	<code>
+doc/
+config/
+migrations/
+middlewares/
+routes/
+services/ | models/
+test/
+  unit/
+  api/
+app.js
+run.js
+package.json
+	</code>
+</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Project Structure: routes</h2>
+		<p>Routes grouping</p>
+		<ul>
+			<li>by features</li>
+			<li>by consumer</li>
+			<li>by API versions (v1, v2 ...)</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Apply Hypermedia: Root Route</h2>
+		<p>Expose first route with links</p>
+
+<pre class="small-code">
+<code>rootRouter.get(url.add("self", "/api/root"), (req, res, next) => {</code>
+<code>  res.apiResponse({</code>
+<code>    links: {</code>
+<code>      users: url.get("users"),</code>
+<code>      profile: url.get("profile")</code>
+<code>    }</code>
+<code>  });</code>
+<code>});</code>
+</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Apply Hypermedia: Versions</h2>
+		<p>Client send request with header</p>
+		<p><mark>Accept: application/vnd.mycompany.myapp-v2+json</mark></p>
+
+<pre class="small-code">
+<code>rootRouter.get(url.add("self", "/api/root"), (req, res, next) => {</code>
+<code>  let mediaType = req.get('Accept');</code>
+<code>  res.apiResponse({</code>
+<code>    links: <mark>getLinks(mediaType)</mark></code>
+<code>  });</code>
+<code>});</code>
+</pre>
+	</section>
+
+	<section class="slide">
+		<h2>API Testing</h2>
+		<ul>
+			<li>Be sure that everything works</li>
+			<li>Fast feedback in development time</li>
+			<li>Developer can read tests like specification</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>API Testing</h2>
+<pre class="small-code">
+<code>describe('GET /users', function() {</code>
+<code>  it('respond with json', function(done) {});</code>
+<code>  it('should return array of users', function(done) {});</code>
+<code>});</code>
+</pre>
+	</section>
+
+	<section class="slide">
+		<h2>API Testing via Mocha + Supertest</h2>
+
+<pre class="small-code">
+<code>  it('respond with json', function(done) {</code>
+<code>    request(app)</code>
+<code>      .get('/users')</code>
+<code>      .set('Accept', 'application/json')</code>
+<code>      <mark>.expect(200)</mark></code>
+<code>      .end(function(err, res) {</code>
+<code>        if (err) return done(err);</code>
+<code>        done();</code>
+<code>      });</code>
+<code>  });</code>
+</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Design your API</h2>
+		<ul>
+			<li>ApiDoc</li>
+			<li>Swagger</li>
+			<li>Blueprint</li>
+			<li>RAML</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Frameworks</h2>
+		<ul>
+			<li>Sails.js</li>
+			<li>HAPI</li>
+			<li>Feathers</li>
+			<li>restify</li>
+			<li>Loopback</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Other modern approaches</h2>
+		<ul>
+			<li>GraphQL</li>
+			<li>Meteor</li>
+			<li>WebSockets</li>
+		</ul>
+	</section>
 	<!--
 		To hide progress bar from entire presentation
 		just remove “progress” element.
